@@ -1,1 +1,2 @@
 # Questao 2
+Matrizes de adjacencia possuem complexidade espacial O(n^2), enquanto Estruturas de adjacencia possuem O(n + m). Portanto, a Estrutura de adjacencias eh preferivel quando n + m < n^2 -> m < n^2 - n. Logo, Estruturas de adjacencias sao preferiveis em questao de armazenamento quando o numero de arestas eh menor que a diferenca do quadrado do numero de vertices e o numero de vertices.
