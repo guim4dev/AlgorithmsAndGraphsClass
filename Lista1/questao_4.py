@@ -1,6 +1,7 @@
 ### DFS Version
+# O(n+m)
 
-def bipartido(V, E):
+def bipartido_dfs(V, E):
     arbitrary_index = len(V)//2
     v_arbitrary = V[arbitrary_index]
     v_adjacents = get_adjacents(v_arbitrary, E)
@@ -31,7 +32,7 @@ def get_adjacents(vertice, edges):
     return adjacents
 
 ### Coloring Version
-
+# O(n+m)
 colors = {}
 
 def bipartido_color(V, E):

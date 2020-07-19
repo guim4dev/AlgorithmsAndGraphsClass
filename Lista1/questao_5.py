@@ -1,4 +1,5 @@
 ###### letra a) // dado: eh bipartido ######
+# O (n) - Polinomial
 
 def possui_conjunto_indepente_k(vertices, arestas, k):
     vertices_colors = colorized_vertices(vertices, arestas)
@@ -43,3 +44,51 @@ def colorize_vertice(vertice, edges, color):
     return True
 
 ###### letra b) fazer ######
+
+def possui_ciclo_hamiltoniano(V,E):
+    posible_starts = get_posible_starts(E)
+    for start in posible_starts:
+        adjacents = get_adjacents(start, E)
+        if can_cycle(start, adjacents, V, E):
+            return True
+    return False
+
+def can_cycle(start, start_adjacents, V, E):
+    edges = edges_without_vertice(E, start)
+    vertices = V - [start]
+    posible_pairs = [(start_adjacents[i], start_adjacents[j]) for i in range(len(start_adjacents)) for j in range(i+1, len(start_adjacents))]
+    for pair in posible_pairs:
+        adjacent_start = pair[0]
+        adjacent_end = pair[1]
+        if has_hamilton_path(adjacent_start, adjacent_end, vertices, edges):
+            return True
+    return False
+
+def has_hamilton_path(current, end, V, E, visited = []):
+    adjacents = get_adjacents(current, V)
+    visited.append(current)
+    ways = adjacents - visited
+    if ways == [end]:
+        return True
+    for way in ways:
+        if has_hamilton_path(way, end, V, E, visited):
+            return True
+    return False
+
+def edges_without_vertice(E, vertice):
+    edges = []
+    for edge in E:
+        if vertice in edge:
+            next
+        edges.append(edge)
+    return edges
+def get_posible_starts(edges):
+    posibles = []
+    memo = {}
+    for edge in edges:
+        for vertice in edge:
+            memo[vertice] = (memo.get(vertice) or 0) + 1
+    for key, value in memo:
+        if value > 1:
+            posibles.append(key)
+    return posibles

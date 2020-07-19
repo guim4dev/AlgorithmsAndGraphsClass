@@ -7,10 +7,9 @@ def misterio(n):
 
 print(misterio(5))
 
-# a) O algoritmo calcula a soma de todos os quadrados ate n
-# b) Soma de exponenciacoes
-# c) O(n)
-# d) Sugestao abaixo:
+# a) O algoritmo calcula a soma de todos os quadrados de numeros naturais ate n
+# b) O(n)
+# c) Sugestao abaixo: O(1)
 
 def soma_dos_quadrados(n):
     return n**3/3 + n**2/2 + n/6

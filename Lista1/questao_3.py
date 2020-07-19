@@ -7,3 +7,5 @@ def possui_ciclo_euleriano(arestas):
         if (value % 2) != 0:
             return False
     return True
+
+# O (m)
