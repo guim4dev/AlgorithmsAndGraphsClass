@@ -9,7 +9,7 @@ def possui_conjunto_indepente_k(vertices, arestas, k):
             independent_one.append(key)
         elif value == 0:
             independent_zero.append(key)
-    if len(independent_one) <= k or len(independent_zero) <= k:
+    if (len(independent_one) >= k) or (len(independent_zero) >= k):
         return True
     return False
 
