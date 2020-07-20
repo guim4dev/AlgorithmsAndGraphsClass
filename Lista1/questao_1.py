@@ -6,7 +6,6 @@ def bad_sort(list): # insertion sort
             list[j + 1] = list[j]
             j -= 1
         list[j + 1] = current_item
-        print(list)
     return list
 
 def good_sort(list): # quick sort
@@ -25,7 +24,6 @@ def good_sort(list): # quick sort
             left.append(item)
         else:
             right.append(item)
-    print(left + [pivot] + right)
     return good_sort(left) + [pivot] + good_sort(right)
 
 array_bad = [2, 7, 5, 6, 9, 0, 1, 4, 8, 5, 3]

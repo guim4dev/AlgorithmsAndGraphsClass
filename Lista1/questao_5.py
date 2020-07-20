@@ -1,7 +1,7 @@
 ###### letra a) // dado: eh bipartido ######
 # O (n) - Polinomial
 
-def possui_conjunto_indepente_k(vertices, arestas, k):
+def possui_conjunto_independente_k(vertices, arestas, k):
     vertices_colors = colorized_vertices(vertices, arestas)
     independent_one = []
     independent_zero = []
@@ -70,6 +70,7 @@ def has_hamilton_path(current, end, V, E, visited = []):
     ways = adjacents - visited
     if ways == [end]:
         return True
+    ways -= [end]
     for way in ways:
         if has_hamilton_path(way, end, V, E, visited):
             return True
