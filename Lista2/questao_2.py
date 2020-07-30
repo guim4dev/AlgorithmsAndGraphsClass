@@ -13,4 +13,5 @@ def maxTasks(tasks):
 def task_end(task):
   return task[1]
 
+T = [(2, 5), (11, 15), (4, 9), (7, 10)]
 print(maxTasks(T))
