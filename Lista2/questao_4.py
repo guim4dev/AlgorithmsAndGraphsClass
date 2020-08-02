@@ -33,7 +33,6 @@ def existe_deleta_aresta_estrutura_b(u, v):
   del u.adjacentes[search_response] # apagar item da memoria e o vetor se realoca na memoria pela contiguidade
 
   second_search =  binary_search(v.adjacentes, u)
-  del v.adjacentes[second_search] # apagar item da memoria e o vetor se realoca na 
-memoria pela contiguidade
+  del v.adjacentes[second_search] # apagar item da memoria e o vetor se realoca na memoria pela contiguidade
 
   return 'Nós eram adjacentes. Aresta deletada.'
