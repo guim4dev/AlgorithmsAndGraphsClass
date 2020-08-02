@@ -24,3 +24,16 @@ def existe_deleta_aresta_matriz(u, v, matriz_adjacencias): # O(1)
 # Sendo um vetor, a parte de achar a aresta poderia ser feita via busca binaria, ja que estaria ordenado, sendo mais otimizado, ja que eh O(logn).
 # Logo, a busca da adjacencia seria mais eficiente.
 # Já na destruição da aresta, fica pior. Porque deletando um, todos os itens do vetor terao que ser realocados na memória para manter a contiguidade.
+
+def existe_deleta_aresta_estrutura_b(u, v):
+  search_response = binary_search(u.adjacentes, v) # Retorna None se nao encontrar. Se encontrar, retorna o indice no vetor do item procurado.
+
+  if search_response == None: return 'Nós não são adjacentes.' # guard clause para caso não sejam adjacentes
+  	 
+  del u.adjacentes[search_response] # apagar item da memoria e o vetor se realoca na memoria pela contiguidade
+
+  second_search =  binary_search(v.adjacentes, u)
+  del v.adjacentes[second_search] # apagar item da memoria e o vetor se realoca na 
+memoria pela contiguidade
+
+  return 'Nós eram adjacentes. Aresta deletada.'
