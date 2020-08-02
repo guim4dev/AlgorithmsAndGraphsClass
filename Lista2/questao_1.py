@@ -61,11 +61,9 @@ def get_dp_knapsack_array(P, n):
   for i in range(len(n), 0, -1): 
     if res <= 0: 
       break
-    # either the result comes from the 
-    # top (K[i-1][w]) or from (val[i-1] 
-    # + K[i-1] [w-wt[i-1]]) as in Knapsack 
-    # table. If it comes from the latter 
-    # one/ it means the item is included. 
+    # resultado vem de cima dp[i-1][p]
+    # ou de (n[i-1][1] + dp[i-1][p] na tabela Knapsack.
+    # Se vem do segundo, o item foi incluido.
     if res == dp[i - 1][p]: 
       continue
     else: 
