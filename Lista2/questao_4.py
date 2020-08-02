@@ -1,22 +1,16 @@
 # LETRA A
+# dado u.adjacentes = linked list
+# dado v.adjacentes = linked list
 def existe_deleta_aresta_estrutura(u, v): # O(2n) - # O(n)
   exists = False
-  index_u_adjacents_delete = None
-  index_v_adjacents_delete = None
   for adjacente in u.adjacentes:
-    adjacente = u.adjacentes[adjacente_index]
     if adjacente == v:
       exists = True
-      index_u_adjacents_delete = adjacente_index
-
+      aponta_ponteiro_para_proximo_adjacente(adjacente) # apontar ponteiro apontado para si(v na lista encadeada) para o filho de v em questão
   if exists:
-    for adjacente_index in range(len(v.adjacentes)):
-      adjacente = v.adjacentes[adjacente_index]
+    for adjacente v.adjacentes:
       if adjacente == u:
-        index_v_adjacents_delete = adjacente_index
-    
-    del u.adjacentes[index_u_adjacents_delete]
-    del v.adjacentes[index_v_adjacents_delete]
+        aponta_ponteiro_para_proximo_adjacente(adjacente) # apontar ponteiro apontado para si(u na lista encadeada) para o filho de u em questão
     return 'Nós eram adjacentes. Aresta deletada.'
   else:
     return 'Nós não são adjacentes.'
@@ -27,3 +21,6 @@ def existe_deleta_aresta_matriz(u, v, matriz_adjacencias): # O(1)
     matriz_adjacencias[v][u] = 0
 
 # LETRA B
+# Sendo um vetor, a parte de achar a aresta poderia ser feita via busca binaria, ja que estaria ordenado, sendo mais otimizado, ja que eh O(logn).
+# Logo, a busca da adjacencia seria mais eficiente.
+# Já na destruição da aresta, fica pior. Porque deletando um, todos os itens do vetor terao que ser realocados na memória para manter a contiguidade.
